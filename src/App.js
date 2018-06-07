@@ -1,21 +1,48 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import uid from 'uid'
+
+import CallOutForm from './components/CallOutForm'
+import CallOutList from './components/CallOutList'
+
+import './App.css'
 
 class App extends Component {
+  state = {
+    callOuts: [
+      {
+        id: uid(10),
+        message:
+          'This is a test message with no real content. To delete a message just click on the message.',
+        category: 'introduction'
+      }
+    ]
+  }
+
+  addCallOut = callout => {
+    let callOuts = this.state.callOuts
+    this.setState({ callOuts: [...callOuts, callout] })
+  }
+
+  deleteCallOut = id => {
+    let callOuts = this.state.callOuts
+    let index = callOuts.findIndex(x => x.id === id)
+    callOuts.splice(index, 1)
+    this.setState({ callOuts: callOuts })
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <header className="App-header">Barkers Messenger App</header>
+        <h4>My Call Outs</h4>
+        <CallOutList
+          callOuts={this.state.callOuts}
+          onDelete={this.deleteCallOut}
+        />
+        <CallOutForm addCallOut={this.addCallOut} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
