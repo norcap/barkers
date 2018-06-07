@@ -14,13 +14,9 @@ class App extends Component {
       callOuts: [
         {
           id: uid(10),
-          message: 'Some text message you wanna send',
-          category: 'news'
-        },
-        {
-          id: uid(10),
-          message: 'Some other text message, but with more words',
-          category: 'sport'
+          message:
+            'This is a test message with no real content. To delete a message just click on the message.',
+          category: 'introduction'
         }
       ]
     }
@@ -32,12 +28,22 @@ class App extends Component {
     this.setState({ callOuts: callOuts })
   }
 
+  deleteCallOut(id) {
+    let callOuts = this.state.callOuts
+    let index = callOuts.findIndex(x => x.id === id)
+    callOuts.splice(index, 1)
+    this.setState({ callOuts: callOuts })
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">Barkers Messenger App</header>
         <h4>My Call Outs</h4>
-        <CallOutList callOuts={this.state.callOuts} />
+        <CallOutList
+          callOuts={this.state.callOuts}
+          onDelete={this.deleteCallOut.bind(this)}
+        />
         <CallOutForm addCallOut={this.addCallOut.bind(this)} />
       </div>
     )

@@ -1,3 +1,8 @@
 .callOutMessage {
-  background-color: #e8e8e8;
+  width: 300px;
+  padding: 10px;
+  margin: 15px;
+  background-color: #e9d1ff;
+  border: 2px solid #f6f6f6;
+  border-radius: 10px;
 }

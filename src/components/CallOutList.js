@@ -7,7 +7,13 @@ export default class CallOutList extends Component {
     let callOutMessages
     if (this.props.callOuts) {
       callOutMessages = this.props.callOuts.map(callOut => {
-        return <CallOut key={callOut.id} callOut={callOut} />
+        return (
+          <CallOut
+            key={callOut.id}
+            callOut={callOut}
+            onDelete={this.props.onDelete}
+          />
+        )
       })
     }
     return <div>{callOutMessages}</div>
