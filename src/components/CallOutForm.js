@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import uid from 'uid'
 
 export default class CallOutForm extends Component {
-  // Defnine all possible categories - those are fixed, Users are not allowed to create their own categories
   static defaultProps = {
-    categories: ['news', 'sport', 'today', 'life']
+    categories: [
+      'news',
+      'sport',
+      'today',
+      'life',
+      'politics',
+      'society',
+      'finance',
+      'weather'
+    ]
   }
 
-  //Save data from Form and send it to App.js
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault()
     if (this.refs.message.value === '') {
       alert('Please fill in a message before posting it')
@@ -24,18 +31,15 @@ export default class CallOutForm extends Component {
   }
 
   render() {
-    //Get all categories for Select Menu
-    let categoryOptions = this.props.categories.map(category => {
-      return (
-        <option key={category} value={category}>
-          {category}
-        </option>
-      )
-    })
+    let categoryOptions = this.props.categories.map(category => (
+      <option key={category} value={category}>
+        {category}
+      </option>
+    ))
     return (
       <div>
         <h4>Add a Call out</h4>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <label>Message:</label>
             <input
