@@ -1,5 +1,5 @@
 .App {
-  width: 600px;
+  max-width: 600px;
   margin: 50px;
   background-color: #669973;
 }

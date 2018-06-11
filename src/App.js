@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import uid from 'uid'
 
-import CallOutForm from './components/CallOutForm'
-import CallOutList from './components/CallOutList'
+import CallOutForm from './components/CallOuts/CallOutForm'
+import CallOutList from './components/CallOuts/CallOutList'
+import Chat from './components/Chats/Chat'
 
 import './App.css'
 
@@ -15,7 +16,8 @@ class App extends Component {
           'This is a test message with no real content. To delete a message just click on the message.',
         category: 'introduction'
       }
-    ]
+    ],
+    chatHistory: []
   }
 
   addCallOut = callout => {
@@ -30,6 +32,13 @@ class App extends Component {
     this.setState({ callOuts: callOuts })
   }
 
+  addToHistory = newChatMessage => {
+    let newChatHistory = this.state.chatHistory
+    this.setState({
+      chatHistory: [...newChatHistory, newChatMessage]
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,6 +49,11 @@ class App extends Component {
           onDelete={this.deleteCallOut}
         />
         <CallOutForm addCallOut={this.addCallOut} />
+        <h4>Chat Window</h4>
+        <Chat
+          addToHistory={this.addToHistory}
+          chatHistory={this.state.chatHistory}
+        />
       </div>
     )
   }
