@@ -22,7 +22,7 @@ export default class CallOutForm extends Component {
         category: this.refs.category.value
       }
 
-      this.props.addCallOut(newCallOut)
+      this.props.onAddCallOut(newCallOut)
     }
   }
 

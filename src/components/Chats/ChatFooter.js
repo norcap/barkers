@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import uid from 'uid'
 import moment from 'moment'
 
-export default class ChatInputField extends Component {
+export default class ChatFooter extends Component {
   handleSubmit = e => {
     e.preventDefault()
     if (this.refs.message.value === '') {

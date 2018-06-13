@@ -4,14 +4,11 @@ import CallOut from './CallOut'
 
 export default class CallOutList extends Component {
   render() {
+    const { callOuts, onDelete } = this.props
     let callOutMessages
-    if (this.props.callOuts) {
-      callOutMessages = this.props.callOuts.map(callOut => (
-        <CallOut
-          key={callOut.id}
-          callOut={callOut}
-          onDelete={this.props.onDelete}
-        />
+    if (callOuts) {
+      callOutMessages = callOuts.map(callOut => (
+        <CallOut key={callOut.id} callOut={callOut} onDelete={onDelete} />
       ))
     }
     return <div>{callOutMessages}</div>
