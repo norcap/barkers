@@ -1,0 +1,1 @@
+export const GET_CALLOUTS = 'GET_CALLOUTS'

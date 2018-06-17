@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 50%;
+  grid-template-rows: 10% auto 10%;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  background-color: #f7f7f7;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  align-self: stretch;
+  overflow: scroll;
+  background-color: white;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.calloutStyle {
+  width: 80%;
+  padding: 10px;
+  margin: 15px;
+  background-color: #fbffd1;
+  border: 2px solid #878787;
+  border-radius: 10px;
+}

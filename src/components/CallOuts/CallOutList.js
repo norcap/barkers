@@ -1,19 +1,42 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import Header from '../Header'
+import Footer from '../Footer'
+import { getCallouts } from '../../Actions/CalloutActions'
 
-import CallOut from './CallOut'
+import '../css/Main.css'
 
-export default class CallOutList extends Component {
+export class CallOutList extends Component {
+  componentDidMount() {
+    this.props.getCallouts()
+  }
+
+  renderCallOutList() {
+    return this.props.callouts.map(callout => (
+      <div className="calloutStyle" key={callout.calloutID}>
+        <strong>{callout.category}</strong>
+        <br />
+        <span>{callout.message}</span>
+      </div>
+    ))
+  }
+
   render() {
-    let callOutMessages
-    if (this.props.callOuts) {
-      callOutMessages = this.props.callOuts.map(callOut => (
-        <CallOut
-          key={callOut.id}
-          callOut={callOut}
-          onDelete={this.props.onDelete}
-        />
-      ))
-    }
-    return <div>{callOutMessages}</div>
+    return (
+      <div className="container">
+        <Header className="header" />
+        <div className="main">{this.renderCallOutList()}</div>
+        <Footer className="footer" />
+      </div>
+    )
   }
 }
+
+const mapStateToProps = state => ({
+  callouts: state.callouts
+})
+
+export default connect(
+  mapStateToProps,
+  { getCallouts }
+)(CallOutList)

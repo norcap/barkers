@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 
 import ChatMessage from './ChatMessage'
-import ChatInputField from './ChatInputField'
+import FooterChat from './ChatFooter'
+import ChatHeader from './ChatHeader'
 
 export default class Chat extends Component {
-  addToChatHistory = newChatMessage => {
-    this.props.addToHistory(newChatMessage)
-  }
-
   render() {
     let chatMessages
     if (this.props.chatHistory) {
@@ -21,8 +18,9 @@ export default class Chat extends Component {
     }
     return (
       <div>
+        <ChatHeader />
         <div>{chatMessages}</div>
-        <ChatInputField addToChatHistory={this.addToChatHistory} />
+        <FooterChat onClick={this.props.onClick} />
       </div>
     )
   }
