@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import uid from 'uid'
+import moment from 'moment'
+import Header from '../Header'
+import Footer from '../Footer'
+import { sendCallout } from '../../Actions/CalloutActions'
+
+import '../css/Main.css'
 
 export default class CallOutForm extends Component {
   static defaultProps = {
@@ -16,13 +23,12 @@ export default class CallOutForm extends Component {
     if (this.refs.message.value === '') {
       alert('Please fill in a message before posting it')
     } else {
-      let newCallOut = {
-        id: uid(10),
-        message: this.refs.message.value,
-        category: this.refs.category.value
-      }
-
-      this.props.onAddCallOut(newCallOut)
+      sendCallout(
+        uid(10),
+        this.refs.category.value,
+        this.refs.username.value,
+        this.refs.message.value
+      )
     }
   }
 
@@ -33,9 +39,9 @@ export default class CallOutForm extends Component {
       </option>
     ))
     return (
-      <div>
-        <h4>Add a Call out</h4>
-        <form onSubmit={this.handleSubmit}>
+      <div className="container">
+        <Header className="header" />
+        <form onSubmit={this.handleSubmit} className="main">
           <div>
             <textarea
               type="text"
@@ -44,10 +50,14 @@ export default class CallOutForm extends Component {
             />
           </div>
           <div>
+            <input type="text" placeholder="Your Name" ref="username" />
+          </div>
+          <div>
             <select ref="category">{categoryOptions}</select>
           </div>
           <input type="submit" value="send" />
         </form>
+        <Footer className="footer" />
       </div>
     )
   }

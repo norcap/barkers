@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { addToHistory } from '../actions'
 import Chat from '../components/Chats/Chat'
 
 const mapStateToProps = state => ({

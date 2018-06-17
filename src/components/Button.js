@@ -2,21 +2,19 @@ import React, { Component } from 'react'
 import { css } from 'emotion'
 
 const buttonStyle = css`
-  width: 100px;
-  height: 30px;
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  max-height: 100px;
   background-color: darkblue;
   border: 2px solid grey;
-  border-radius: 5px;
-  margin: 10px;
+  margin: 0px;
   color: white;
+  font-size: 120%;
 `
 
 export default class Button extends Component {
   render() {
-    return (
-      <button className={this.props.buttonStyle} onClick={this.props.onClick}>
-        {this.props.text}
-      </button>
-    )
+    return <button className={buttonStyle} />
   }
 }
