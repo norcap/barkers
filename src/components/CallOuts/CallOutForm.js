@@ -34,7 +34,8 @@ export class CallOutForm extends Component {
         userid: this.props.userdata.userid,
         message: this.refs.message.value,
         timestamp: Date.now(),
-        time: moment().format('LT')
+        time: moment().format('LT'),
+        date: moment().format('ll')
       }
       sendCallout(calloutid, newCallout)
       history.push('/calloutlist')

@@ -8,7 +8,13 @@ export default class ChatMessage extends Component {
         <div>
           {this.props.message.userid}: {this.props.message.message}
         </div>
-        <div className="time">{this.props.message.time}</div>
+        {Date.now() - this.props.message.timestamp <= 86400000 ? (
+          <div className="time">{this.props.message.time}</div>
+        ) : (
+          <div className="time">{this.props.message.date}</div>
+        )}
+
+        <div className="time">{this.props.message.timestamp}</div>
       </div>
     )
   }

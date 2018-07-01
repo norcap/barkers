@@ -17,10 +17,11 @@ export class ChatFooter extends Component {
         userid: this.props.userdata.userid,
         message: this.refs.message.value,
         timestamp: Date.now(),
-        time: moment().format('LT')
+        time: moment().format('LT'),
+        date: moment().format('ll')
       }
-
       addToChatHistory(this.props.chatid, messageid, newChatMessage)
+      document.querySelector('.chatInput').value = ''
     }
   }
   render() {
@@ -30,7 +31,7 @@ export class ChatFooter extends Component {
           <input
             className="chatInput"
             type="text"
-            placeholder="type message..."
+            placeholder="type a message..."
             ref="message"
           />
 

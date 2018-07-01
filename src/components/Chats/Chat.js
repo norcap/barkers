@@ -14,6 +14,11 @@ export class Chat extends Component {
     this.props.getChatHistory(this.props.match.params.chatid)
   }
 
+  componentDidUpdate = () => {
+    const div = document.querySelector('.main')
+    div.scrollTop = div.scrollHeight
+  }
+
   componentWillUnmount = () => {
     this.props.clearChatHistory()
   }
@@ -21,21 +26,23 @@ export class Chat extends Component {
   render() {
     let chatMessages
     if (this.props.chatHistory) {
-      chatMessages = this.props.chatHistory.map(
-        singleMessage =>
-          singleMessage.message ? (
-            <ChatMessage
-              key={singleMessage.messageid}
-              message={singleMessage}
-            />
-          ) : null
-      )
+      chatMessages = this.props.chatHistory
+        .sort((a, b) => a.timestamp - b.timestamp)
+        .map(
+          singleMessage =>
+            singleMessage.message ? (
+              <ChatMessage
+                key={singleMessage.messageid}
+                message={singleMessage}
+              />
+            ) : null
+        )
     }
     return (
       <div className="container">
         <ChatHeader className="header" />
         <div className="main">{chatMessages}</div>
-        <ChatFooter className="footer" onClick={this.props.onClick} />
+        <ChatFooter className="footer" />
       </div>
     )
   }

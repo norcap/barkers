@@ -6,7 +6,7 @@ import history from '../history'
 import './css/Main.css'
 
 export class Login extends Component {
-  static defaultProps = { users: [1, 2, 3] }
+  static defaultProps = { users: [1, 2, 3, 4] }
 
   handleSubmit = e => {
     e.preventDefault()
