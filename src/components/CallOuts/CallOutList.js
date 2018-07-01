@@ -37,20 +37,22 @@ export class CallOutList extends Component {
   }
 
   renderCallOutList() {
-    return this.props.callouts.map(callout => (
-      <div
-        className="calloutStyle"
-        key={callout.calloutid}
-        onClick={() => this.createNewChat(callout)}
-      >
-        <div className="messageTop">
-          <strong>{callout.category}</strong>
+    return this.props.callouts
+      .sort((a, b) => b.timestamp - a.timestamp)
+      .map(callout => (
+        <div
+          className="calloutStyle"
+          key={callout.calloutid}
+          onClick={() => this.createNewChat(callout)}
+        >
+          <div className="messageTop">
+            <strong>{callout.category}</strong>
+          </div>
+          <br />
+          <div>{callout.message}</div>
+          <div className="time">{callout.time}</div>
         </div>
-        <br />
-        <div>{callout.message}</div>
-        <div className="time">{callout.time}</div>
-      </div>
-    ))
+      ))
   }
 
   render() {
