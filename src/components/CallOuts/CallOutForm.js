@@ -8,7 +8,7 @@ import { sendCallout } from '../../Actions/Actions'
 
 import history from '../../history'
 
-import HeadlineIcon from '../../HeadlineIcons/BarkerVisualTopics.png'
+import HeadlineIcon from '../../HeadlineIcons/BarkerVisualCallOuts.png'
 import '../css/Main.css'
 
 export class CallOutForm extends Component {
