@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="21px" viewBox="0 0 12 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Layout" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="New-Call-Out" transform="translate(-35.000000, -51.000000)" stroke="#9CA8AA">
+            <polyline id="Triangle" transform="translate(41.000000, 61.500000) rotate(-90.000000) translate(-41.000000, -61.500000) " points="30.5 66.5 41 56.5 41 56.5 51.5 66.5"></polyline>
+        </g>
+    </g>
+</svg>

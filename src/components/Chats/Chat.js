@@ -39,10 +39,10 @@ export class Chat extends Component {
         )
     }
     return (
-      <div className="container">
-        <ChatHeader className="header" />
+      <div className="containerChat">
+        <ChatHeader className="headerChat" />
         <div className="main">{chatMessages}</div>
-        <ChatFooter className="footer" />
+        <ChatFooter />
       </div>
     )
   }

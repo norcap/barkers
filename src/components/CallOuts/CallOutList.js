@@ -12,6 +12,8 @@ import {
   removeCallout
 } from '../../Actions/Actions'
 
+import HeadlineIcon from '../../HeadlineIcons/BarkerVisualTopics.png'
+
 import '../css/Main.css'
 
 export class CallOutList extends Component {
@@ -59,6 +61,12 @@ export class CallOutList extends Component {
     return (
       <div className="container">
         <Header className="header" />
+        <div className="headline">
+          <div className="headlineText">Pick a Topic</div>
+          <div>
+            <img src={HeadlineIcon} alt="" />
+          </div>
+        </div>
         <div className="main">{this.renderCallOutList()}</div>
         <Footer className="footer" />
       </div>

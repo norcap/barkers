@@ -20,16 +20,48 @@ h4 {
   display: grid;
   justify-content: center;
   grid-template-columns: 100%;
+  grid-template-rows: 65px 80px auto 70px;
+  grid-template-areas:
+    'header'
+    'headline'
+    'main'
+    'footer';
+}
+
+.containerChat {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100%;
   grid-template-rows: 65px auto 70px;
   grid-template-areas:
     'header'
     'main'
     'footer';
-  background-color: #f7f7f7;
+}
+
+.headerChat {
+  grid-area: header;
 }
 
 .header {
   grid-area: header;
+}
+
+.headline {
+  grid-area: headline;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 40px;
+}
+
+.headlineText {
+  margin: auto 0px;
+  font-family: 'Work Sans';
+  font-size: 1.1rem;
+  font-style: “normal”;
+  font-weight: 500;
+  color: #444;
 }
 
 .main {
@@ -41,6 +73,11 @@ h4 {
 
 .footer {
   grid-area: footer;
+}
+
+.footerChat {
+  grid-area: footer;
+  background-color: #eee;
 }
 
 .calloutStyle {
@@ -107,7 +144,7 @@ h4 {
   background-color: white;
   padding: 3px 10px;
   margin: 10px 20px;
-  border: 0px;
+  border: 0;
   border-radius: 15px;
 }
 

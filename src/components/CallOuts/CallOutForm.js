@@ -7,6 +7,8 @@ import Footer from '../Footer'
 import { sendCallout } from '../../Actions/Actions'
 
 import history from '../../history'
+
+import HeadlineIcon from '../../HeadlineIcons/BarkerVisualTopics.png'
 import '../css/Main.css'
 
 export class CallOutForm extends Component {
@@ -51,6 +53,14 @@ export class CallOutForm extends Component {
     return (
       <div className="container">
         <Header className="header" />
+        <div className="headline">
+          <div className="headlineText">
+            Add a new<br />Callout
+          </div>
+          <div>
+            <img src={HeadlineIcon} alt="" />
+          </div>
+        </div>
         <form onSubmit={this.handleSubmit} className="main">
           <div className="calloutTextareaBox">
             <textarea

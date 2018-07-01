@@ -4,6 +4,7 @@ import uid from 'uid'
 import moment from 'moment'
 
 import { addToChatHistory } from '../../Actions/Actions'
+import '../css/Main.css'
 
 export class ChatFooter extends Component {
   handleSubmit = e => {
@@ -26,7 +27,7 @@ export class ChatFooter extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="footerChat">
         <form onSubmit={this.handleSubmit}>
           <input
             className="chatInput"

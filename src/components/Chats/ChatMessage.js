@@ -13,8 +13,6 @@ export default class ChatMessage extends Component {
         ) : (
           <div className="time">{this.props.message.date}</div>
         )}
-
-        <div className="time">{this.props.message.timestamp}</div>
       </div>
     )
   }

@@ -6,6 +6,8 @@ import Footer from '../Footer'
 import Header from '../Header'
 import { getUserData } from '../../Actions/Actions'
 
+import HeadlineIcon from '../../HeadlineIcons/BarkerVisualChats.png'
+
 import '../css/Main.css'
 
 export class ChatList extends Component {
@@ -27,6 +29,14 @@ export class ChatList extends Component {
     return (
       <div className="container">
         <Header className="header" />
+        <div className="headline">
+          <div className="headlineText">
+            Current Chats &<br /> Discussions
+          </div>
+          <div>
+            <img src={HeadlineIcon} alt="" />
+          </div>
+        </div>
         <div className="main">{this.renderChatList()}</div>
         <Footer className="footer" />
       </div>
