@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>NavBarIconChats</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="NavBarIconChats" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15.9999747,7.55556892 C16.0030336,8.7287829 15.7289252,9.8861293 15.1999759,10.9333414 C13.9208305,13.4927398 11.3056777,15.1100054 8.44443108,15.1111125 C7.2712171,15.1141714 6.1138707,14.840063 5.06665865,14.3111138 L0,16 L1.68888622,10.9333414 C1.15993696,9.8861293 0.885828596,8.7287829 0.888887482,7.55556892 C0.889994643,4.69432233 2.50726023,2.07916947 5.06665865,0.800024057 C6.1138707,0.271074796 7.2712171,-0.00303356329 8.44443108,2.53227174e-05 L8.88887482,2.53227174e-05 C12.7251438,0.211669157 15.7883308,3.27485621 15.9999747,7.11112518 L15.9999747,7.55556892 Z" id="Shape" stroke="#9CA8AA" stroke-width="0.9"></path>
+    </g>
+</svg>

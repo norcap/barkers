@@ -1,7 +1,7 @@
 .callOutMessage {
   padding: 10px;
   margin: 15px;
-  background-color: #fbffd1;
-  border: 2px solid #f6f6f6;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #666;
 }

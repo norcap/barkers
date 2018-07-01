@@ -1,1 +1,7 @@
 export const GET_CALLOUTS = 'GET_CALLOUTS'
+export const SET_USER_ID = 'SET_USER_ID'
+export const SET_CHATID = 'SET_CHATID'
+export const GET_USER_DATA = 'GET_USER_DATA'
+export const GET_CHAT_HISTORY = 'GET_CHAT_HISTORY'
+export const CLEAR_CHAT_HISTORY = 'CLEAR_CHAT_HISTORY'
+export const GET_USER_CHAT_LIST = 'GET_USER_CHAT_LIST'

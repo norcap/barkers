@@ -1,27 +1,51 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import ChatMessage from './ChatMessage'
-import FooterChat from './ChatFooter'
 import ChatHeader from './ChatHeader'
+import ChatFooter from './ChatFooter'
 
-export default class Chat extends Component {
+import '../css/Main.css'
+
+import { getChatHistory, clearChatHistory } from '../../Actions/Actions'
+
+export class Chat extends Component {
+  componentDidMount = () => {
+    this.props.getChatHistory(this.props.match.params.chatid)
+  }
+
+  componentWillUnmount = () => {
+    this.props.clearChatHistory()
+  }
+
   render() {
     let chatMessages
     if (this.props.chatHistory) {
-      chatMessages = this.props.chatHistory.map(singleMessage => (
-        <ChatMessage
-          key={singleMessage.id}
-          message={singleMessage.message}
-          date={singleMessage.date}
-        />
-      ))
+      chatMessages = this.props.chatHistory.map(
+        singleMessage =>
+          singleMessage.message ? (
+            <ChatMessage
+              key={singleMessage.messageid}
+              message={singleMessage}
+            />
+          ) : null
+      )
     }
     return (
-      <div>
-        <ChatHeader />
-        <div>{chatMessages}</div>
-        <FooterChat onClick={this.props.onClick} />
+      <div className="container">
+        <ChatHeader className="header" />
+        <div className="main">{chatMessages}</div>
+        <ChatFooter className="footer" onClick={this.props.onClick} />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  chatHistory: state.chatHistory
+})
+
+export default connect(
+  mapStateToProps,
+  { getChatHistory, clearChatHistory }
+)(Chat)

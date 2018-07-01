@@ -1,33 +1,49 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import uid from 'uid'
 import moment from 'moment'
 
-export default class ChatFooter extends Component {
+import { addToChatHistory } from '../../Actions/Actions'
+
+export class ChatFooter extends Component {
   handleSubmit = e => {
     e.preventDefault()
     if (this.refs.message.value === '') {
       alert('Please fill in a message before posting it')
     } else {
+      let messageid = uid(10)
       let newChatMessage = {
-        id: uid(10),
+        messageid: messageid,
+        userid: this.props.userdata.userid,
         message: this.refs.message.value,
         timestamp: Date.now(),
-        date: moment().format('LT')
+        time: moment().format('LT')
       }
 
-      this.props.addToChatHistory(newChatMessage)
+      addToChatHistory(this.props.chatid, messageid, newChatMessage)
     }
   }
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text" placeholder="type message..." ref="message" />
-          </div>
-          <input type="submit" value="send" />
+          <input
+            className="chatInput"
+            type="text"
+            placeholder="type message..."
+            ref="message"
+          />
+
+          <input className="chatSend" type="submit" value="send" />
         </form>
       </div>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  chatid: state.chatid,
+  userdata: state.userdata
+})
+
+export default connect(mapStateToProps)(ChatFooter)

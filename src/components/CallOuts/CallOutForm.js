@@ -4,31 +4,40 @@ import uid from 'uid'
 import moment from 'moment'
 import Header from '../Header'
 import Footer from '../Footer'
-import { sendCallout } from '../../Actions/CalloutActions'
+import { sendCallout } from '../../Actions/Actions'
 
+import history from '../../history'
 import '../css/Main.css'
 
-export default class CallOutForm extends Component {
+export class CallOutForm extends Component {
   static defaultProps = {
     categories: [
+      { text: 'selectTopic', value: 'select topic' },
       { text: 'news', value: 'News' },
       { text: 'sport', value: 'Sport' },
       { text: 'politics', value: 'Politics' },
       { text: 'life', value: 'Life' }
     ]
   }
-
   handleSubmit = e => {
     e.preventDefault()
-    if (this.refs.message.value === '') {
-      alert('Please fill in a message before posting it')
+    if (
+      this.refs.message.value === '' ||
+      this.refs.category.value === 'select topic'
+    ) {
+      alert('Please fill in a message and select a topic before posting it')
     } else {
-      sendCallout(
-        uid(10),
-        this.refs.category.value,
-        this.refs.username.value,
-        this.refs.message.value
-      )
+      let calloutid = uid(10)
+      let newCallout = {
+        calloutid: calloutid,
+        category: this.refs.category.value,
+        userid: this.props.userdata.userid,
+        message: this.refs.message.value,
+        timestamp: Date.now(),
+        time: moment().format('LT')
+      }
+      sendCallout(calloutid, newCallout)
+      history.push('/calloutlist')
     }
   }
 
@@ -42,23 +51,33 @@ export default class CallOutForm extends Component {
       <div className="container">
         <Header className="header" />
         <form onSubmit={this.handleSubmit} className="main">
-          <div>
+          <div className="calloutTextareaBox">
             <textarea
+              className="calloutTextarea"
               type="text"
               placeholder="Type your Call Out here"
               ref="message"
             />
           </div>
           <div>
-            <input type="text" placeholder="Your Name" ref="username" />
+            <select className="calloutSelect" ref="category">
+              {categoryOptions}
+            </select>
           </div>
-          <div>
-            <select ref="category">{categoryOptions}</select>
-          </div>
-          <input type="submit" value="send" />
+
+          <input className="calloutSend" type="submit" value="send" />
         </form>
         <Footer className="footer" />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => ({
+  userdata: state.userdata
+})
+
+export default connect(
+  mapStateToProps,
+  {}
+)(CallOutForm)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>NavBarIconFriends</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="NavBarIconFriends" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group-2" stroke="#9CA8AA">
+            <path d="M14.5454545,16 L14.5454545,14.2222222 C14.5454545,12.2585431 12.9173991,10.6666667 10.9090909,10.6666667 L3.63636364,10.6666667 C1.62805546,10.6666667 2.01858732e-16,12.2585431 0,14.2222222 L0,16" id="Shape"></path>
+            <ellipse id="Oval" cx="7.27272727" cy="3.55555556" rx="3.63636364" ry="3.55555556"></ellipse>
+            <path d="M20,16 L20,14.2222222 C19.9987639,12.6018824 18.8772716,11.1873068 17.2727273,10.7822222" id="Shape"></path>
+            <path d="M13.6363636,0.115555556 C15.2453771,0.518373145 16.3707666,1.93599213 16.3707666,3.56 C16.3707666,5.18400787 15.2453771,6.60162686 13.6363636,7.00444444" id="Shape"></path>
+        </g>
+    </g>
+</svg>

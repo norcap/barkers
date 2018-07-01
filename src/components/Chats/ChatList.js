@@ -1,18 +1,43 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import Footer from '../Footer'
 import Header from '../Header'
+import { getUserData } from '../../Actions/Actions'
 
 import '../css/Main.css'
 
-export default class ChatList extends Component {
+export class ChatList extends Component {
+  renderChatList() {
+    if (this.props.chatlist) {
+      return this.props.chatlist.map(chat => (
+        <div key={chat.chatid} className="messageStyle">
+          <Link to={`/chat/${chat.chatid}`}>
+            <strong>from: {chat.userid}</strong>
+            <div>{chat.latestmessage}Placeholder 'Latest Text'</div>
+            <div className="time">Placeholder 'Time'</div>
+          </Link>
+        </div>
+      ))
+    }
+  }
+
   render() {
     return (
       <div className="container">
         <Header className="header" />
-        <div className="main">List of all of User's Chats</div>
+        <div className="main">{this.renderChatList()}</div>
         <Footer className="footer" />
       </div>
     )
   }
 }
+const mapStateToProps = state => ({
+  chatlist: state.chatlist
+})
+
+export default connect(
+  mapStateToProps,
+  { getUserData }
+)(ChatList)

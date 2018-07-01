@@ -1,9 +1,26 @@
+a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: #bbb;
+}
+
+strong {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #05606f;
+}
+
+h4 {
+  color: black;
+}
+
 .container {
   height: 100vh;
   display: grid;
   justify-content: center;
-  grid-template-columns: 50%;
-  grid-template-rows: 10% auto 10%;
+  grid-template-columns: 100%;
+  grid-template-rows: 65px auto 70px;
   grid-template-areas:
     'header'
     'main'
@@ -27,10 +44,103 @@
 }
 
 .calloutStyle {
-  width: 80%;
+  font-size: 0.9rem;
+  font-style: “normal”;
+  font-weight: “normal”;
   padding: 10px;
   margin: 15px;
-  background-color: #fbffd1;
-  border: 2px solid #878787;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 17px rgba(156, 168, 170, 5);
+}
+
+.calloutTextareaBox {
+  width: 100%;
+  padding: 20px;
+}
+
+.calloutTextarea {
+  font-family: 'Work Sans';
+  font-size: 1rem;
+  font-style: “normal”;
+  font-weight: 100;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid #05606f;
+  border-radius: 12px;
+}
+
+.calloutSelect {
+  font-family: 'Work Sans';
+  font-size: 1rem;
+  font-style: “normal”;
+  font-weight: 100;
+  margin-left: 20px;
+  padding: 5px 20px;
+  border: 1px solid #05606f;
+  border-radius: 5px;
+}
+
+.calloutSend {
+  height: 30px;
+  font-family: 'Work Sans';
+  font-size: 1rem;
+  font-style: “normal”;
+  font-weight: 100;
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0px 25px;
+  color: #8ec7e3;
+  border: 1px solid #8ec7e3;
+  border-radius: 15px;
+}
+
+.chatInput {
+  width: 70%;
+  height: 30px;
+  font-family: 'Work Sans';
+  font-size: 1rem;
+  font-style: “normal”;
+  font-weight: 100;
+  background-color: white;
+  padding: 3px 10px;
+  margin: 10px 20px;
+  border: 0px;
+  border-radius: 15px;
+}
+
+.chatInput:focus {
+  outline: none;
+}
+
+.chatSend {
+  height: 30px;
+  font-family: 'Work Sans';
+  font-size: 1rem;
+  font-style: “normal”;
+  font-weight: 100;
+  background-color: #8ec7e3;
+  color: white;
+  border-radius: 15px;
+  border: 0px;
+}
+
+.messageStyle {
+  padding: 10px;
+  margin: 15px;
+  background-color: white;
+  border: 1px solid #8ec7e3;
   border-radius: 10px;
+}
+
+.messageTop {
+  margin-bottom: 0px;
+}
+
+.time {
+  width: 100%;
+  text-align: right;
+  font-size: 0.6rem;
 }

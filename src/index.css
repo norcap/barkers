@@ -3,6 +3,10 @@
 }
 
 body {
-  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Work Sans';
   font-size: 1rem;
+  overflow: hidden;
+  color: #aaa;
 }

@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import '../css/ChatMessage.css'
+import '../css/Main.css'
 
 export default class ChatMessage extends Component {
   render() {
     return (
-      <div className="chatMessage">
-        <span>{this.props.message}</span>
-        <br />
-        <span>{this.props.date}</span>
+      <div className="messageStyle">
+        <div>
+          {this.props.message.userid}: {this.props.message.message}
+        </div>
+        <div className="time">{this.props.message.time}</div>
       </div>
     )
   }
