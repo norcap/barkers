@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import moment from 'moment'
 import uid from 'uid'
 import history from '../../history'
 import Header from '../Header'
@@ -52,7 +53,7 @@ export class CallOutList extends Component {
           </div>
           <br />
           <div>{callout.message}</div>
-          <div className="time">{callout.time}</div>
+          <div className="time">{moment(callout.timestamp).format('LT')}</div>
         </div>
       ))
   }

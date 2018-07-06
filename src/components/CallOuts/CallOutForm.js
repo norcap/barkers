@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import uid from 'uid'
-import moment from 'moment'
 import Header from '../Header'
 import Footer from '../Footer'
 import { sendCallout } from '../../Actions/Actions'
@@ -35,9 +34,7 @@ export class CallOutForm extends Component {
         category: this.refs.category.value,
         userid: this.props.userdata.userid,
         message: this.refs.message.value,
-        timestamp: Date.now(),
-        time: moment().format('LT'),
-        date: moment().format('ll')
+        timestamp: Date.now()
       }
       sendCallout(calloutid, newCallout)
       history.push('/calloutlist')

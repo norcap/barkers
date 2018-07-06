@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import uid from 'uid'
-import moment from 'moment'
 
 import { addToChatHistory } from '../../Actions/Actions'
 import '../css/Main.css'
@@ -17,9 +16,7 @@ export class ChatFooter extends Component {
         messageid: messageid,
         userid: this.props.userdata.userid,
         message: this.refs.message.value,
-        timestamp: Date.now(),
-        time: moment().format('LT'),
-        date: moment().format('ll')
+        timestamp: Date.now()
       }
       addToChatHistory(this.props.chatid, messageid, newChatMessage)
       document.querySelector('.chatInput').value = ''
